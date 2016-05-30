@@ -1,0 +1,24 @@
+group 'my.eden.helloworld'
+version '1.0-SNAPSHOT'
+
+/* 引用 java plugin 獲得編譯 java 專案相關的 task $ */
+apply plugin: 'java'
+
+/* 引用 application plugin 獲得執行 java 專案相關的 task $ */
+apply plugin: 'application'
+
+/* 執行application plugin 用到的參數 */
+mainClassName = "my.eden.helloworld.HelloWorld"
+
+sourceCompatibility = 1.8
+
+/* 設定 maven repository server $ */
+repositories {
+    mavenCentral()
+}
+
+/* 宣告專案相依函式庫 */
+dependencies {
+    compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
+    compile group: 'log4j', name: 'log4j', version: '1.2.16'
+}
